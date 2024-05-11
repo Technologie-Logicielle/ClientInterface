@@ -1,12 +1,9 @@
 {
-  "projects": {
-    "default": "myproject"
-  },
- "targets": {
-    "project-name": {
+  "targets": {
+    "dttx-hcmus": {
       "hosting": {
         "production": [
-          "project-name"
+          "spiderbot"
         ],
         "test": [
           "project-name-test"
@@ -16,5 +13,7 @@
         ]
       }
     }
-  }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
