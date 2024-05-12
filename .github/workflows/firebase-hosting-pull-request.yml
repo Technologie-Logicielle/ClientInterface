@@ -2,17 +2,19 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on PR
-on:
-  push:
-    branches:
-      - main
+on: pull_request
+env:
+  REACT_APP_PROJECT_ID: spiderbot-hcmus
+  REACT_APP_API_KEY: AIzaSyCv8XVMPwo9j13FHMP41-venwCrNRJG9XE
+  REACT_APP_APP_ID: "1:174284520261:web:05f55db6ec6358321b1c2c"
+  REACT_APP_API_URL: /api
 permissions:
   checks: write
   contents: read
   pull-requests: write
 jobs:
   build_and_preview:
-    # if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +22,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DTTX_HCMUS }}
-          projectId: ${{ vars.REACT_APP_PROJECT_ID }}
-          channelId: live
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SPIDERBOT_HCMUS }}
+          projectId: spiderbot-hcmus

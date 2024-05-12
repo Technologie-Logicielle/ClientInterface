@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "target": "production",
     "public": "build",
     "ignore": [
       "firebase.json",
@@ -9,8 +8,10 @@
     ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/api/**",
+        "run": {
+          "serviceId": "api"
+        }
       }
     ]
   }
