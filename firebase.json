@@ -12,6 +12,10 @@
         "run": {
           "serviceId": "spiderbot"
         }
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }
